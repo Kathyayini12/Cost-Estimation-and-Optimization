@@ -8,29 +8,27 @@ This repository provides guidance and sample calculations for estimating the cos
 ## Architecture Overview
 
 - **EC2 Instances:** 2 instances (baseline), scaling to 4 at peak load.
-  ![add service and configure price for ec2](https://github.com/user-attachments/assets/5d2133a3-59fc-4f9d-9a1c-5d7254fa023a)
 - **VPC:** One dedicated Virtual Private Cloud.
 - **Subnets:** At least 2 (public and private).
 - **EBS:** Persistent storage attached to each EC2 instance.
-  ![EBS](https://github.com/user-attachments/assets/79743ff2-1a26-4e23-99d0-2921861a1e97)
-
 - **Security Groups:** Configured with inbound and outbound rules for secure access.
-![inbound and outbound estimate](https://github.com/user-attachments/assets/04ea4ec5-7171-48a8-a818-dde863d095c2)
-
 
 ---
 
 ## Assumptions
 
 - **AWS Region:** us-east-1 (N. Virginia)
+  ![add service and configure price for ec2](https://github.com/user-attachments/assets/5d2133a3-59fc-4f9d-9a1c-5d7254fa023a)
 - **EC2 Instance Type:** t3.medium (2 vCPUs, 4GB RAM)
-![instance type pricing](https://github.com/user-attachments/assets/c51c78d7-c004-4414-af46-0934c4735337)
+  ![instance type pricing](https://github.com/user-attachments/assets/c51c78d7-c004-4414-af46-0934c4735337)
 
 - **EBS Volume:** 30GB gp3 per instance
+  ![EBS](https://github.com/user-attachments/assets/79743ff2-1a26-4e23-99d0-2921861a1e97)
 - **VPC & Subnets:** Default AWS pricing 
 - **Usage Pattern:** 2 instances running 24x7; 2 additional instances running 8 hours per day (peak)
 - **Data Transfer:** Minimal, as per typical web app traffic
-![hourly charge for ondemand instances](https://github.com/user-attachments/assets/b18c2b03-29d9-4650-8be0-2aa068cebb05)
+  ![inbound and outbound estimate](https://github.com/user-attachments/assets/04ea4ec5-7171-48a8-a818-dde863d095c2)
+  ![hourly charge for ondemand instances](https://github.com/user-attachments/assets/b18c2b03-29d9-4650-8be0-2aa068cebb05)
 
 ---
 
